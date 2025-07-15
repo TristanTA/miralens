@@ -1,12 +1,23 @@
 from birdnetlib import Recording
 from birdnetlib.analyzer_lite import LiteAnalyzer
+import os
+
+# Custom model and label paths (in your repo)
+MODEL_PATH = os.path.join("models", "birdnet_lite", "BirdNET_6K_GLOBAL_MODEL.tflite")
+LABEL_PATH = os.path.join("models", "birdnet_lite", "labels.txt")
+
+# Patch the paths before creating the analyzer
+LiteAnalyzer.MODEL_PATH = MODEL_PATH
+LiteAnalyzer.LABEL_PATH = LABEL_PATH
 
 def detect_birds(audio_path, lat=None, lon=None, date=None, min_conf=0.25, debug=False):
     if debug:
-        print(f"[DEBUG] Loading BirdNET Lite...")
-        
+        print(f"[DEBUG] Using local BirdNET Lite model:")
+        print(f"[DEBUG] Model: {LiteAnalyzer.MODEL_PATH}")
+        print(f"[DEBUG] Labels: {LiteAnalyzer.LABEL_PATH}")
+
     analyzer = LiteAnalyzer()
-    
+
     if debug:
         print(f"[DEBUG] Analyzing file: {audio_path}")
         print(f"[DEBUG] Lat: {lat}, Lon: {lon}, Min Conf: {min_conf}")
