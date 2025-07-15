@@ -10,7 +10,10 @@ def main():
     files = preprocess_audio("test_assets", debug=DEBUG)
     for path in files:
         print(f"\nAnalyzing {path}")
-        detect_birds(path, debug=True)
+        detections = detect_birds(path, debug=DEBUG)
+        if detections:
+            top = max(detections, key=lambda d: d["confidence"])
+            log_detection(path, top)
 
 if __name__ == "__main__":
     main()
