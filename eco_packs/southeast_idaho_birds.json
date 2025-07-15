@@ -1,0 +1,37 @@
+{
+  "Mountain Bluebird": {
+    "scientific_name": "Sialia currucoides",
+    "traits": ["bright blue", "open country", "state bird"],
+    "habitat": "meadows, pastures, sagebrush steppe",
+    "season": "spring to fall",
+    "notes": "Idaho’s state bird. Often perches on fenceposts and hunts insects midair."
+  },
+  "Yellow Warbler": {
+    "scientific_name": "Setophaga petechia",
+    "traits": ["bright yellow", "sweet song", "streaked breast"],
+    "habitat": "shrubs near water",
+    "season": "late spring to summer",
+    "notes": "Their 'sweet-sweet-sweet, I’m so sweet!' song is common near rivers and streams."
+  },
+  "Western Meadowlark": {
+    "scientific_name": "Sturnella neglecta",
+    "traits": ["yellow belly", "black V", "flutelike song"],
+    "habitat": "grasslands, fields",
+    "season": "spring to summer",
+    "notes": "Their melodic song echoes through southeastern Idaho farmland."
+  },
+  "Song Sparrow": {
+    "scientific_name": "Melospiza melodia",
+    "traits": ["striped chest", "bushy tail", "melodic song"],
+    "habitat": "riparian areas, brush",
+    "season": "year-round (mostly)",
+    "notes": "Common along the Snake River. Recognizable for their variable but structured songs."
+  },
+  "American Kestrel": {
+    "scientific_name": "Falco sparverius",
+    "traits": ["small falcon", "rust and blue", "hovering flight"],
+    "habitat": "open fields, telephone wires",
+    "season": "year-round",
+    "notes": "Often seen perched along roadsides or hovering over grass hunting mice and insects."
+  }
+}
