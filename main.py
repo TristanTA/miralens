@@ -1,8 +1,10 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from core.perception.audio import detect_birds
+from utils.birdnet_wrapper import detect_birds
 from utils.audio_preprocessor import preprocess_audio
+from utils.eco_lookup import load_all_eco_packs, get_bird_info
+from utils.logger import log_detection
 
 DEBUG = True
 eco_data = load_all_eco_packs(debug=DEBUG)

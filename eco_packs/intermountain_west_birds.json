@@ -1,0 +1,107 @@
+{
+  "Black-throated Gray Warbler": {
+    "scientific_name": "Setophaga nigrescens",
+    "traits": ["black throat", "striped face", "buzzy song"],
+    "habitat": "open pine, pine‑oak, pinyon‑juniper forests",
+    "season": "breeding spring to summer",
+    "notes": "Striking black/white warbler, hops deliberately while gleaning insects." 
+  },
+  "Mountain Chickadee": {
+    "scientific_name": "Poecile gambeli",
+    "traits": ["white eyebrow stripe", "black cap", "fee‑bee song"],
+    "habitat": "montane coniferous forests",
+    "season": "year‑round",
+    "notes": "Widespread in western mountains, caches food and joins mixed flocks."
+  },
+  "Western Tanager": {
+    "scientific_name": "Piranga ludoviciana",
+    "traits": ["bright yellow body", "red head (male)", "thrush‑like song"],
+    "habitat": "open coniferous and mixed forests",
+    "season": "spring to summer",
+    "notes": "Males flash bright plumage; often perched high singing from treetops."
+  },
+  "Lazuli Bunting": {
+    "scientific_name": "Passerina amoena",
+    "traits": ["sky‑blue male", "rust breast", "sweet warble"],
+    "habitat": "shrubby areas near open woodlands and streams",
+    "season": "spring to summer",
+    "notes": "Male’s blue plumage and song make them easy to spot along stream edges."
+  },
+  "Cassin’s Finch": {
+    "scientific_name": "Haemorhous cassinii",
+    "traits": ["rosy head and chest", "conifer seed diet", "cone‑favoring"],
+    "habitat": "montane conifer forests",
+    "season": "year‑round",
+    "notes": "Feeds heavily on pinecones, often in flocks with other finches."
+  },
+  "Dusky Flycatcher": {
+    "scientific_name": "Empidonax oberholseri",
+    "traits": ["small Empidonax", "dusky olive‑gray", "sibilant song"],
+    "habitat": "shrubby montane slopes and open forests",
+    "season": "spring to summer",
+    "notes": "Typical ‘empid’ family behavior: perches and sally‑gleans insects."
+  },
+  "Red‑naped Sapsucker": {
+    "scientific_name": "Sphyrapicus nuchalis",
+    "traits": ["red nape", "sap wells", "drumming woodpecker"],
+    "habitat": "aspen and mixed forests",
+    "season": "spring to summer",
+    "notes": "Taps trees to feed on sap; creates holes used by many species."
+  },
+  "Pine Siskin": {
+    "scientific_name": "Spinus pinus",
+    "traits": ["streaked", "brown/yellow wings", "seedy diet"],
+    "habitat": "coniferous forests and edges",
+    "season": "year‑round (variable irruptions)",
+    "notes": "Flocks often invade feeders in winter after cone crop failures."
+  },
+  "Hermit Thrush": {
+    "scientific_name": "Catharus guttatus",
+    "traits": ["brown back", "reddish tail", "ethereal flute‑like song"],
+    "habitat": "mixed woods with dense undergrowth",
+    "season": "spring to fall",
+    "notes": "Melodic song echoes through forest understory at dawn."
+  },
+  "Warbling Vireo": {
+    "scientific_name": "Vireo gilvus",
+    "traits": ["olive‑gray", "long warble", "active singer"],
+    "habitat": "riparian trees and open woodlands",
+    "season": "spring to summer",
+    "notes": "Their continuous warbling makes them easy to hear, hard to see."
+  },
+  "Yellow‑rumped Warbler": {
+    "scientific_name": "Setophaga coronata",
+    "traits": ["yellow rump patch", "streaked plumage", "chip‑trill song"],
+    "habitat": "varied: conifers, scrub, forests",
+    "season": "spring to fall",
+    "notes": "One of the most common warblers in Idaho, easy to spot by rump."
+  },
+  "MacGillivray's Warbler": {
+    "scientific_name": "Geothlypis tolmiei",
+    "traits": ["white eyering", "olive upperparts", "loud song"],
+    "habitat": "dense shrubby undergrowth near water",
+    "season": "spring to summer",
+    "notes": "Often heard singing deep inside thickets, hard to see."
+  },
+  "Chipping Sparrow": {
+    "scientific_name": "Spizella passerina",
+    "traits": ["rufous cap", "black eye line", "chipping trill"],
+    "habitat": "open woods, edges, yards",
+    "season": "spring to fall",
+    "notes": "Their dry trill song in trees signals territory in Idaho summers."
+  },
+  "American Robin": {
+    "scientific_name": "Turdus migratorius",
+    "traits": ["orange breast", "dark head", "robin song"],
+    "habitat": "yards, fields, forests",
+    "season": "year‑round",
+    "notes": "Classic spring songster; forages on lawns for worms."
+  },
+  "Spotted Towhee": {
+    "scientific_name": "Pipilo maculatus",
+    "traits": ["black hood", "rufous sides", "double‑note song"],
+    "habitat": "brushy edges, chaparral",
+    "season": "spring to summer",
+    "notes": "Scratches leaf litter for seeds and insects with rapid hops."
+  }
+}

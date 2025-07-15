@@ -1,0 +1,12 @@
+# pip install -r requirements.txt
+
+tensorflow==2.13.0
+tflite-runtime==2.13.0
+numpy
+scipy
+pydub
+librosa
+soundfile
+requests
+opencv-python
+python-dotenv
