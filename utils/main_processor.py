@@ -1,13 +1,12 @@
 import os
 import tempfile
-import moviepy.editor as mp # type: ignore
-from moviepy.editor import VideoFileClip # type: ignore
+from moviepy import VideoFileClip
 from utils.video_processor import process_video
 from utils.audio_processor import process_audio
 
 def extract_audio_from_video(video_path, output_path):
     video = VideoFileClip(video_path)
-    video.audio.write_audiofile(output_path, codec='pcm_s16le', verbose=False, logger=None)
+    video.audio.write_audiofile(output_path, codec='pcm_s16le', logger=None)
 
 def process_media(input_path, fps=1.0, chunk_duration=5.0):
     """

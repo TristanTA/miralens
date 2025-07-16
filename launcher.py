@@ -6,11 +6,12 @@ from kivy.uix.spinner import Spinner
 from kivy.uix.textinput import TextInput
 from kivy.properties import StringProperty
 from kivy.clock import Clock
-from utils.main_processor import process_media
-from main import run_audio_pipeline
 import sys
 import threading
 import io
+import os
+from utils.main_processor import process_media
+from utils.live_processor import process_live_stream
 
 class LogBox(TextInput):
     pass
@@ -25,7 +26,6 @@ class OutputRedirector(io.StringIO):
         return super().write(text)
 
 class LauncherLayout(BoxLayout):
-    mode = StringProperty("all")
     vision_mode = StringProperty("file")
 
     def __init__(self, **kwargs):
@@ -34,22 +34,13 @@ class LauncherLayout(BoxLayout):
         self.spacing = 10
         self.padding = 10
 
-        self.mode_spinner = Spinner(
-            text='all',
-            values=('all', 'vision', 'audio'),
-            size_hint=(1, None),
-            height=44
-        )
-        self.add_widget(Label(text="Select Mode:"))
-        self.add_widget(self.mode_spinner)
-
         self.vision_spinner = Spinner(
             text='file',
             values=('file', 'live'),
             size_hint=(1, None),
             height=44
         )
-        self.add_widget(Label(text="Vision Mode (if used):"))
+        self.add_widget(Label(text="Input Source:"))
         self.add_widget(self.vision_spinner)
 
         self.run_button = Button(text="Run Mira Lens", size_hint=(1, None), height=50)
@@ -64,25 +55,31 @@ class LauncherLayout(BoxLayout):
 
     def update_log(self, text):
         Clock.schedule_once(lambda dt: self._append_log(text))
-    
+
     def _append_log(self, text):
         self.log_box.text += text
         self.log_box.cursor = (0, len(self.log_box.text))
         self.log_box.scroll_y = 0
 
     def on_run_pressed(self, instance):
-        mode = self.mode_spinner.text
         vision_mode = self.vision_spinner.text
 
         def run_pipeline():
-            # Hardcoded path for now; later make this user-selectable
-            source_path = "test_assets/forest_clip.mp4"
+            if vision_mode == "file":
+                folder = "test_assets"
+                video_files = [f for f in os.listdir(folder) if f.endswith(".mp4")]
+                if not video_files:
+                    print("No MP4 files found in test_assets/")
+                for file in video_files:
+                    path = os.path.join(folder, file)
+                    print(f"\nProcessing {file}...")
+                    detections = process_media(input_path=path)
+                    for d in detections:
+                        print(d)
 
-            detections = process_media(input_path=source_path)
-
-            for d in detections:
-                print(d)
-
+            elif vision_mode == "live":
+                print("\nStarting live mode...")
+                process_live_stream(chunk_duration=5.0)
 
         threading.Thread(target=run_pipeline).start()
 
