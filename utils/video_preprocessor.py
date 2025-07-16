@@ -52,7 +52,6 @@ def run_video(mode="file", source_path="test_assets/"):
                 ret, frame = cap.read()
                 if not ret:
                     break
-
                 results = detect_objects(frame)
 
                 for label, conf in results:
@@ -74,3 +73,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     run_video(mode=args.mode, source_path=args.source)
+    print("Video processing complete.")
