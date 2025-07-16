@@ -313,5 +313,68 @@
     "confidence": 0.89,
     "start_time": 0.0,
     "end_time": 3.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:51.922655",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk0.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.93,
+    "start_time": 6.0,
+    "end_time": 9.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:52.359657",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk10.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.61,
+    "start_time": 6.0,
+    "end_time": 9.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:52.748422",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk20.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.61,
+    "start_time": 6.0,
+    "end_time": 9.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:53.190293",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk30.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.96,
+    "start_time": 6.0,
+    "end_time": 9.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:53.583415",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk40.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.95,
+    "start_time": 3.0,
+    "end_time": 6.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:54.006568",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk50.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.97,
+    "start_time": 6.0,
+    "end_time": 9.0
+  },
+  {
+    "timestamp": "2025-07-16T10:14:54.752896",
+    "mode": "birding",
+    "input_file": "processed_audio\\test_bird_sample_chunk70.wav",
+    "top_species": "Black-throated Gray Warbler",
+    "confidence": 0.89,
+    "start_time": 0.0,
+    "end_time": 3.0
   }
 ]
