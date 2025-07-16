@@ -6,7 +6,8 @@ from kivy.uix.spinner import Spinner
 from kivy.uix.textinput import TextInput
 from kivy.properties import StringProperty
 from kivy.clock import Clock
-from utils.video_preprocessor import run_video
+from utils.video_processor import run_video
+from utils.main_processor import process_media
 from main import run_audio_pipeline
 import sys
 import threading
@@ -75,10 +76,14 @@ class LauncherLayout(BoxLayout):
         vision_mode = self.vision_spinner.text
 
         def run_pipeline():
-            if mode in ("audio", "all"):
-                run_audio_pipeline()
-            if mode in ("vision", "all"):
-                run_video(mode=vision_mode, source_path="test_assets/")
+            # Hardcoded path for now; later make this user-selectable
+            source_path = "test_assets/forest_clip.mp4"
+
+            detections = process_media(input_path=source_path)
+
+            for d in detections:
+                print(d)
+
 
         threading.Thread(target=run_pipeline).start()
 
