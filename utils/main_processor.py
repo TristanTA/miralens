@@ -1,6 +1,7 @@
 import os
 import tempfile
-from moviepy.editor import VideoFileClip
+import moviepy.editor as mp # type: ignore
+from moviepy.editor import VideoFileClip # type: ignore
 from utils.video_processor import process_video
 from utils.audio_processor import process_audio
 

@@ -6,7 +6,6 @@ from kivy.uix.spinner import Spinner
 from kivy.uix.textinput import TextInput
 from kivy.properties import StringProperty
 from kivy.clock import Clock
-from utils.video_processor import run_video
 from utils.main_processor import process_media
 from main import run_audio_pipeline
 import sys
