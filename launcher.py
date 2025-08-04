@@ -54,8 +54,19 @@ class LauncherLayout(BoxLayout):
         sys.stdout = OutputRedirector(self.update_log)
 
     def update_log(self, text):
-        Clock.schedule_once(lambda dt: self._append_log(text))
+        def filter_text(raw):
+            lines = raw.strip().split('\n')
+            filtered = []
+            for line in lines:
+                if "[DEBUG]" in line or line.startswith("Speed:"):
+                    continue
+                if "detected" in line.lower() or "Processing" in line or "[ERROR]" in line:
+                    filtered.append(line.strip())
+            return '\n'.join(filtered)
 
+    cleaned = filter_text(text)
+    if cleaned:
+        Clock.schedule_once(lambda dt: self._append_log(cleaned + "\n"))
     def _append_log(self, text):
         self.log_box.text += text
         self.log_box.cursor = (0, len(self.log_box.text))
