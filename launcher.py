@@ -64,32 +64,34 @@ class LauncherLayout(BoxLayout):
     def on_run_pressed(self, instance):
         vision_mode = self.vision_spinner.text
 
-        def run_pipeline(self, mode):
+        def run_pipeline():
             if vision_mode == "file":
                 folder = "test_assets"
                 video_files = [f for f in os.listdir(folder) if f.endswith(".mp4")]
                 if not video_files:
-                    print("No MP4 files found in test_assets/")
+                    Clock.schedule_once(lambda dt: self.update_log("No MP4 files found in test_assets/"))
+                    return
+
                 for file in video_files:
                     path = os.path.join(folder, file)
-                    print(f"\nProcessing {file}...")
+                    Clock.schedule_once(lambda dt: self.update_log(f"\nProcessing {file}..."))
+
                     try:
-                        detections = self.pipeline.run(mode)  # or however it's written
+                        detections = process_media(path)
                         if detections:
-                            Clock.schedule_once(lambda dt: self.update_log(str(detections)))
+                            for d in detections:
+                                Clock.schedule_once(lambda dt, det=d: self.update_log(str(det)))
                         else:
                             Clock.schedule_once(lambda dt: self.update_log("None"))
                     except Exception as e:
                         Clock.schedule_once(lambda dt: self.update_log(f"[ERROR] {str(e)}"))
-                    for d in detections:
-                        print(d)
 
             elif vision_mode == "live":
-                print("\nStarting live mode...")
+                Clock.schedule_once(lambda dt: self.update_log("\nStarting live mode..."))
                 process_live_stream(chunk_duration=5.0)
 
         threading.Thread(target=run_pipeline).start()
-
+        
 class MiraLauncherApp(App):
     def build(self):
         return LauncherLayout()
