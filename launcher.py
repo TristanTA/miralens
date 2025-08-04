@@ -64,9 +64,10 @@ class LauncherLayout(BoxLayout):
                     filtered.append(line.strip())
             return '\n'.join(filtered)
 
-    cleaned = filter_text(text)
-    if cleaned:
-        Clock.schedule_once(lambda dt: self._append_log(cleaned + "\n"))
+        cleaned = filter_text(text)
+        if cleaned:
+            Clock.schedule_once(lambda dt: self._append_log(cleaned + "\n"))
+
     def _append_log(self, text):
         self.log_box.text += text
         self.log_box.cursor = (0, len(self.log_box.text))
@@ -102,7 +103,7 @@ class LauncherLayout(BoxLayout):
                 process_live_stream(chunk_duration=5.0)
 
         threading.Thread(target=run_pipeline).start()
-        
+
 class MiraLauncherApp(App):
     def build(self):
         return LauncherLayout()
