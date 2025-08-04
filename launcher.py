@@ -64,7 +64,7 @@ class LauncherLayout(BoxLayout):
     def on_run_pressed(self, instance):
         vision_mode = self.vision_spinner.text
 
-        def run_pipeline():
+        def run_pipeline(self, mode):
             if vision_mode == "file":
                 folder = "test_assets"
                 video_files = [f for f in os.listdir(folder) if f.endswith(".mp4")]
@@ -73,7 +73,14 @@ class LauncherLayout(BoxLayout):
                 for file in video_files:
                     path = os.path.join(folder, file)
                     print(f"\nProcessing {file}...")
-                    detections = process_media(input_path=path)
+                    try:
+                        detections = self.pipeline.run(mode)  # or however it's written
+                        if detections:
+                            Clock.schedule_once(lambda dt: self.update_log(str(detections)))
+                        else:
+                            Clock.schedule_once(lambda dt: self.update_log("None"))
+                    except Exception as e:
+                        Clock.schedule_once(lambda dt: self.update_log(f"[ERROR] {str(e)}"))
                     for d in detections:
                         print(d)
 
