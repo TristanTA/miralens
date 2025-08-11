@@ -1,12 +1,24 @@
 # pip install -r requirements.txt
 
+# Core dependencies
+kivy==2.3.0
+numpy
+opencv-python
+pillow
+pydub
+requests
+plyer
+
+# Async server & networking
+fastapi
+uvicorn
+websockets
+
+# ML runtime (server side only)
+torch>=2.0.0
+ultralytics
 tensorflow==2.13.0
 tflite-runtime==2.14.0
-numpy
-scipy
-pydub
-librosa
-soundfile
-requests
-opencv-python
-python-dotenv
+
+# Other utilities
+python-multipart
